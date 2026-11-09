@@ -1,0 +1,96 @@
+<html>
+
+<head>
+    <title>Papeleria Escolar</title>
+</head>
+
+<body>
+    <center>
+        <h1 style="background-color: lightpink; font-family: 'Times New Roman'; font: size 80px;">Bienvenido a la
+            papeleria
+            Escolar</h1><img Src="images1.jpg.png" width="200"><img Src="images2.jpg" width="200">
+    </center>
+    <h1 style="background-color: lightpink; font-family: 'Times New Roman';">Papeleria Escolar</h1>
+    <h2>Calculo de copias</h2>
+    <center>
+        <script>
+
+            var color = prompt("Cuantas copias a color necesitas?");
+            var blanco = prompt("Cuantas copias blanco y negro necesitas?");
+
+            color = Number(color);
+            blanco = Number(blanco);
+
+            var total = color + blanco;
+
+            var precioColor;
+            var precioBlanco;
+
+            if (total >= 1 && total <= 50) {
+
+                precioColor = 1.50;
+                precioBlanco = 1.00;
+
+            }
+
+            else if (total >= 51 && total <= 100) {
+
+                precioColor = 1.30;
+                precioBlanco = 0.80;
+
+            }
+
+            else if (total > 100) {
+
+                precioColor = 1.00;
+                precioBlanco = 0.50;
+
+            }
+
+            else {
+                document.write("Cantidad no valida");
+            }
+
+            if (total > 0) {
+
+                var pagoColor = color * precioColor;
+                var pagoBlanco = blanco * precioBlanco;
+
+                var subtotal = pagoColor + pagoBlanco;
+
+                var estudiante = prompt("Eres estudiante? Escribe SI o NO");
+
+                var descuento = 0;
+
+                if (estudiante.toUpperCase() == "SI") {
+
+                    descuento = subtotal * 0.25;
+
+                }
+
+                var totalPagar = subtotal - descuento;
+
+                document.write("<br><br>");
+                document.write("Copias a color: " + color);
+                document.write("<br>");
+                document.write("Copias blanco y negro: " + blanco);
+                document.write("<br><br>");
+
+                document.write("Precio de copias a color: $" + precioColor);
+                document.write("<br>");
+                document.write("Precio de copias blanco y negro: $" + precioBlanco);
+                document.write("<br><br>");
+
+                document.write("Subtotal: $" + subtotal.toFixed(2));
+                document.write("<br>");
+                document.write("Descuento: $" + descuento.toFixed(2));
+                document.write("<br>");
+
+                document.write("<h2>Total a pagar: $" + totalPagar.toFixed(2) + "</h2>");
+
+            }
+
+        </script>
+    </center>
+
+</html>
